@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<link rel="shortcut icon" href="./static/images/SocDocLogo.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		{% if title %}
+		<title>{{ title }} - SocDoc</title>
+		{% else %}
+		<title>SocDoc</title>
+		{% endif %}
+	</head>
+	<body>
+		<div class="banner">
+			<div class="logoContainer">
+				<a href={{ url_for('index') }}>
+					<img src="./static/images/SocDocMainLogo.png" alt="SocDoc main logo"/>
+				</a>
+			</div>
+			<div class="searchContainer">
+				<input type="text" placeholder="Search">
+				<span class="icon">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</span>
+				
+			</div>
+			<div class="links">
+				<div class="item">
+					<a href={{ url_for('login') }}>
+						<div class="icon">
+							<img src="./static/images/SignInIcon.png" alt="Sign In icon"/>
+						</div>
+						<div class="label">
+							Sign In
+						</div>
+					</a>
+				</div>
+				<div class="item">
+					<a href={{ url_for('trackOrder') }}>
+						<div class="icon">
+							<img src="./static/images/TrackOrderIcon.png" alt="Track Order icon"/>
+						</div>
+						<div class="label">
+							Track Order
+						</div>
+					</a>
+				</div>
+				<div class="item">
+					<a href={{ url_for('cart') }}>
+						<div class="icon">
+							<img src="./static/images/ShoppingCartIcon.png" alt="Shopping Cart icon"/>
+						</div>
+						<div class="label">
+							Cart
+						</div>
+					</a>
+				</div>
+			</div>
+			
+		</div>
+		<div class="navBar">
+			<a href={{ url_for('index') }}>Home</a>
+			<a href={{ url_for('login') }}>Login</a>
+			<a href={{ url_for('catalog') }}>Catalog</a>
+			<a href={{ url_for('about') }}>About SocDoc</a>
+			<div class="navBar-right">
+				<a href={{ url_for('returnPolicy') }}>Return Policy</a>
+				<a href={{ url_for('contact') }}>Contact Us</a>
+			</div>
+		</div>
+		<div class="siteBody">
+			{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul>
+					{% for message in messages %}
+						<li>{{ message }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+			{% endwith %}
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>

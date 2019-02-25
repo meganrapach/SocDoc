@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Catalog</h1>
+	
+	<div class='catalogContainer'>
+		
+		<div class='filterNav'>
+			*Filter Nav Area*
+		</div>
+		
+		<div class='catalog'>
+			{% for item in catalog.items %}
+				<div class='item'>
+					<a href={{ url_for('itemDetail', item=item.title) }} style='text-decoration: none; color: black;'>
+						<div class='imageBG'>
+							<img src={{ item.imagePath }} alt="Catalog item image" />
+						</div>
+					</a>
+					<div class='itemInfo'>
+						<b>${{ item.price }}</b><br>
+						{{ item.title }}
+					</div>
+					<div class='itemButtons'>
+						<div class='itemDetails'>
+							Details
+						</div>
+						<div class='addToCart'>
+							Add to Cart
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
