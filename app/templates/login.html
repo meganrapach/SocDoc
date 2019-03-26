@@ -1,24 +1,48 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1>Sign In</h1>
-	<form action="" method="post">
-		{{ form.hidden_tag() }}
-		<p>
-			{{ form.username.label }}<br>
-			{{ form.username(size = 32) }}
-			{% for error in form.username.errors %}
-				<span style="color: red;">[{{ error }}]</span>
-			{% endfor %}
-		</p>
-		<p>
-			{{ form.password.label }}<br>
-			{{ form.password(size = 32) }}
-			{% for error in form.password.errors %}
-				<span style="color: red;">[{{ error }}]</span>
-			{% endfor %}
-		</p>
-		<p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-		<p>{{ form.submit() }}</p>
-	</form>
+	<div class="loginBody">
+		<div class="loginContainer">
+		
+			<div class="logoContainer">
+				<img src="./static/images/SocDocMainLogo.png" alt="SocDoc main logo"/>
+			</div>
+		
+			<h2>Sign In</h1>
+		
+			<div class="formContainer">
+				<form action="" method="post">
+					{{ form.hidden_tag() }}
+					<p class="fieldLine">
+						{{ form.username.label }}
+						{{ form.username(class_="textInput", size = 32) }}
+						{% for error in form.username.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p>
+					<p class="fieldLine">
+						{{ form.password.label }}
+						{{ form.password(class_="textInput", size = 32) }}
+						{% for error in form.password.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p>
+					<p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+					
+					<div class="buttons">
+						{{ form.submit(class_="signInButton") }} <br>
+						
+						<div class="createAccountButton">
+						Don't have an account? Create one now!
+							<a href={{ url_for('createAccount') }} style='color: #7f7f7f;'>
+							Create Account
+							</a>
+						</div>
+						
+						<!--{{form.createAccount(class_="createAccountButton")}}-->
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 {% endblock %}

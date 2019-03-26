@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1>SocDoc Home Page</h1>
+	<div class="homepageBody">
+		<div class="homepageContent">
+			<div class="contentBlock">
+				<text style="font-size: 80pt">Welcome to SocDoc!</text> <br>
+				<text style="font-size: 18pt">Find your perfect pair</text>
+			</div>
+			<div class="browseButton">
+				<a href={{ url_for('catalog') }}>
+					Browse Catalog
+				</a>
+			</div>
+		</div>
+	</div>
 {% endblock %}

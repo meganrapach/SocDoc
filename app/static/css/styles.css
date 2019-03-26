@@ -317,7 +317,7 @@ button:focus {
 
 .catalog .item .itemButtons .itemDetails{
 	width: 40%;
-	height: 100%%;
+	height: 100%;
 	
 	text-align: center;
 	
@@ -334,13 +334,525 @@ button:focus {
 
 .catalog .item .itemButtons .addToCart{
 	width: 50%;
-	height: 100%%;
+	height: 100%;
 	
 	text-align: center;
 	
 	background-color: #feef4a;
 	
 	border-radius: 5px;
+	
+	/*
+	border: 1px;
+	border-color: blue;
+	border-style: solid;
+	*/
+}
+
+.loginBody{
+	background-color: #fff8b7;
+	text-align: center;
+	width: 100%;
+	height:100%;
+}
+
+.loginContainer{
+	
+	width: 500px;
+	height: 430px;
+	margin-top: 65px;
+	
+	text-align: center;
+	display: inline-block;
+	
+	text-align: center;
+
+	background-color: white;
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+}
+
+.loginContainer .formContainer{
+	
+	height: 65%;
+	
+	text-align: center;
+	
+	/*
+	border: 1px;
+	border-color: blue;
+	border-style: solid;
+	*/
+}
+
+.fieldLine {
+	padding: 10px;
+}
+
+.fieldLine .textInput {
+	height: 30px;
+	
+	border-width: .5px;
+	border-radius: 5px;
+}
+
+.loginContainer input:focus {
+    outline: none;
+}
+
+.loginContainer .logoContainer{
+	min-width: 170px;
+	height: 75px;
+	
+	padding-top: 20px;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+	
+}
+
+.loginContainer .logoContainer img{
+	width: 170px;
+	height: 75px;
+	
+	display: block;
+	margin: 0 auto;
+}
+
+.loginContainer .formContainer .buttons{
+	display: inline-block;
+	
+	text-align: center;
+	
+	width: 85%;
+	height: 25%;
+	
+	/*
+	border: 1px;
+	border-color: green;
+	border-style: solid;
+	*/
+}
+
+.loginContainer .formContainer .buttons .signInButton {
+	background-color: #fff8b7;
+	
+	height: 50%;
+	
+	border-radius: 5px;
+}
+
+.loginContainer .formContainer .buttons .createAccountButton {
+	
+	height: 50%;
+	
+	padding-top: 20px;
+	
+	font-size: 10pt;
+	
+	border-radius: 5px;
+}
+
+.createAccountBody{
+	background-color: #fff8b7;
+	text-align: center;
+	width: 100%;
+	height:100%;
+}
+
+.createAccountContainer{
+	
+	margin-top: 65px;
+	
+	width: 450px;
+	height: 400px;
+	display: inline-block;
+	text-align: center;
+	
+	background-color: white;
+	
+	padding: 0 0 0 20px;
+	
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+}
+
+.createAccountContainer input:focus {
+    outline: none;
+}
+
+.createAccountContainer .formContainer{
+	
+	height: 75%;
+	width: 75%;
+	
+	text-align: center;
+	display: inline-block;
+	
+	/*
+	border: 1px;
+	border-color: blue;
+	border-style: solid;
+	*/
+}
+
+.createAccountContainer .formContainer .fieldLine{
+	padding: 0px;
+	margin: 0px;
+	
+	text-align: left;
+}
+
+.createAccountContainer .formContainer .buttons{
+	display: inline-block;
+	
+	text-align: center;
+	
+	width: 85%;
+	height: 25%;
+}
+
+.createAccountContainer .formContainer .buttons .createAccountButton {
+	
+	background-color: #f2f2f2;
+	
+	height: 50%;
+	
+	border-radius: 5px;
+	
+	font-weight: bold;
+}
+
+.homepageBody{
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	
+	background-image: url("../images/HomePageSocks.png");
+	background-color: #fff8b7;
+	
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.homepageBody .homepageContent{
+	padding-top: 75px;
+	
+	text-align: center;
+	
+	/*
+	border: 1px; 
+	border-style: solid;
+	border-color: blue;
+	*/
+}
+
+.homepageBody .homepageContent .contentBlock{
+	width: 100%;
+	height: 25%;
+
+	display: inline-block;
+	text-align: center;
+	
+	/*
+	border: 1px; 
+	border-style: solid;
+	border-color: blue;
+	*/
+}
+
+.homepageBody .homepageContent .browseButton{
+	
+	width: 15%;
+	height: 45px;
+	
+	margin-top: 25px;
+	
+	display: inline-block;
+	text-align: center;
+	line-height: 45px;
+	
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	background-color: #feef4a;
+	
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+	
+	border-radius: 5px;
+}
+
+.homepageBody .homepageContent .browseButton a {
+	text-decoration:none;
+}
+
+.homepageBody .homepageContent .browseButton a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+.homepageBody .homepageContent .browseButton a:active {
+	color: black;
+	text-decoration: none;
+}
+
+.returnPolicyBody{
+	background-color: #fff8b7;
+	text-align: center;
+	width: 100%;
+	height:auto;
+}
+
+.returnPolicyBody .returnPolicyContainer{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	
+	width: 95%;
+	height: auto;
+	overflow-y: auto;
+	display: inline-block;
+	text-align: left;
+	
+	background-color: white;
+	
+	padding: 0 20px 20px 20px;
+	
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+}
+
+.returnPolicyBody .returnPolicyContainer a{
+	color: #7f7f7f;
+}
+
+.termsOfServiceBody{
+	background-color: #fff8b7;
+	text-align: center;
+	
+	width: 100%;
+	height:auto;
+	
+}
+
+.termsOfServiceBody .termsOfServiceContainer{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	
+	width: 95%;
+	height: auto;
+	overflow-y: auto;
+	display: inline-block;
+	text-align: left;
+	
+	background-color: white;
+	
+	padding: 0 20px 20px 20px;
+	
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+}
+
+.termsOfServiceBody .termsOfServiceContainer a{
+	color: #7f7f7f;
+}
+
+.privacyPolicyBody{
+	background-color: #fff8b7;
+	text-align: center;
+	
+	width: 100%;
+	height:auto;
+}
+
+.privacyPolicyBody .privacyPolicyContainer{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	
+	width: 95%;
+	height: auto;
+	overflow-y: auto;
+	display: inline-block;
+	text-align: left;
+	
+	background-color: white;
+	
+	padding: 0 20px 20px 20px;
+	
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+}
+
+.privacyPolicyBody .privacyPolicyContainer a{
+	color: #7f7f7f;
+}
+
+.contactUsBody{
+	background-color: #fff8b7;
+	text-align: center;
+	
+	width: 100%;
+	height:auto;
+}
+
+.contactUsBody .contactUsContainer{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	
+	width: 95%;
+	height: auto;
+	overflow-y: auto;
+	display: inline-block;
+	text-align: left;
+	
+	background-color: white;
+	
+	padding: 0 20px 20px 20px;
+	
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+}
+
+.aboutUsBody{
+	background-color: #fff8b7;
+	text-align: center;
+	
+	width: 100%;
+	height:100%;
+}
+
+.aboutUsBody .aboutUsContainer{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	
+	width: 60%;
+	height: auto;
+	overflow-y: auto;
+	display: inline-block;
+	text-align: left;
+	
+	background-color: white;
+	
+	padding: 0 20px 20px 20px;
+	
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+}
+
+.aboutUsBody .aboutUsContainer img {
+	width: 200px;
+	height: 200px;
+	
+	border-radius: 50%;
+}
+
+.aboutUsBody .aboutUsContainer .foundersImagesContainer{
+	width: 100%;
+	height: 240px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+	text-align: center;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+}
+
+.aboutUsBody .aboutUsContainer .foundersImagesContainer .foundersImage{
+	width: 33%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	
+	/*
+	border: 1px;
+	border-color: green;
+	border-style: solid;
+	*/
+}
+
+.aboutUsBody .aboutUsContainer .foundersImagesContainer .foundersImage .photo{
+	width: 100%;
+	height: 200px;
+	
+	/*
+	border: 1px;
+	border-color: blue;
+	border-style: solid;
+	*/
+}
+
+.aboutUsBody .aboutUsContainer .foundersImagesContainer .foundersImage .caption{
+	width: 100%;
+	height: auto;
+	
+	padding-top: 15px;
 	
 	/*
 	border: 1px;

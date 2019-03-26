@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="createAccountBody">
+		<div class="createAccountContainer">
+			
+			<h1>Create Account</h1>
+			
+			<div class="formContainer">
+				<form action="" method="post">
+					{{ form.hidden_tag() }}
+					<p class="fieldLine">
+						{{ form.firstName.label }} 
+						{{ form.firstName(class_="textInput", size = 32) }} 
+						{% for error in form.firstName.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p> <br>
+					
+					<p class="fieldLine">
+						{{ form.lastName.label }}
+						{{ form.lastName(class_="textInput", size = 32) }} 
+						{% for error in form.lastName.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p> <br>
+					
+					<p class="fieldLine">
+						{{ form.zipCode.label }}
+						{{ form.zipCode(class_="textInput", size = 5) }} 
+						{% for error in form.zipCode.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p> <br>
+					
+					<p class="fieldLine">
+						{{ form.email.label }}
+						{{ form.email(class_="textInput", size = 32) }}
+						{% for error in form.email.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p> <br>
+					
+					<p class="fieldLine">
+						{{ form.password.label }}
+						{{ form.password(class_="textInput", size = 32) }} 
+						{% for error in form.password.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p> <br>
+					
+					<div class="buttons">
+						<p>{{ form.submit(class_="createAccountButton") }} </p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for, request, jsonify
 from app import app
-from app.forms import LoginForm
+from app.forms import LoginForm, CreateAccountForm
 
 from app.catalog import Catalog
 
@@ -66,6 +66,14 @@ def about():
 def returnPolicy():
     return render_template('returnPolicy.html', title='Return Policy')
 
+@app.route('/termsOfService')
+def termsOfService():
+    return render_template('termsOfService.html', title='Terms of Service')
+
+@app.route('/privacyPolicy')
+def privacyPolicy():
+    return render_template('privacyPolicy.html', title='Privacy Policy')
+
 @app.route('/trackOrder')
 def trackOrder():
     return render_template('trackOrder.html', title='Track Order')
@@ -77,3 +85,13 @@ def cart():
 @app.route('/contact')
 def contact():
     return render_template('contact.html', title='Contact Us')
+
+@app.route('/createAccount', methods=['GET', 'Post'])
+def createAccount():
+    accountForm = CreateAccountForm()
+    if accountForm.validate_on_submit():
+        flash('New Account requested for user {}'.format(
+            accountForm.firstName.data))
+        return redirect(url_for('index'))
+    return render_template('createAccount.html', title='Create Account', form = accountForm)
+
