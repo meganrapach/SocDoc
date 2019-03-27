@@ -3,7 +3,110 @@
 {% block content %}
 	<div class="contactUsBody">
 		<div class="contactUsContainer">
-			<h1>Contact Us</h1>
+			<div class="contactContentContainer">
+				
+				<div class="contactFormContainer">
+					<div class="contactFormInfo">
+					
+						<h1>Contact Us</h1>
+						
+						<p>
+							We're here to answer any questions you may have about our products and services. If you have any feedback as well - we want to hear from you!
+						</p>
+						
+						<p>
+							Please enter your full name, email address, and message below. If your inquiry is related to an order placement, please include your order number in the message field.
+						</p>
+						
+						<p>
+							At SocDoc, we highly value getting your questions answered, your concerns addressed, and your ideas heard. A representative will respond to your inquiry within 48 hours.
+						</p>
+					</div>
+					
+					<div class="contactForm">
+						<form action="" method="post">
+							{{ form.hidden_tag() }}
+							
+							<div style="padding: 20px;">						
+								{{ form.name.label }} 
+								{{ form.name(class_="textInput", size = 32) }} 
+								{% for error in form.name.errors %}
+									<span style="color: red;">[{{ error }}]</span>
+								{% endfor %}
+
+								{{ form.email.label }} 
+								{{ form.email(class_="textInput", size = 32) }} 
+								{% for error in form.email.errors %}
+									<span style="color: red;">[{{ error }}]</span>
+								{% endfor %}
+							
+							</div>
+							
+							<div class="messageFieldLine">
+								<div style="padding-right: 3px;">
+									{{ form.message.label }}
+								</div>
+								<div>
+									{{ form.message(class_="largeTextInput", size = 70) }}
+									<br>
+									{% for error in form.message.errors %}
+										<span style="color: red;">[{{ error }}]</span>
+									{% endfor %}
+								</div>
+							</div>
+							
+							<div>
+								<p>{{ form.submit(class_="sendMessageButton") }}</p>
+							</div>
+								
+						</form>
+					</div>
+				</div>
+				
+				<div class="contactLinks">
+					<div class="pointsOfContact">
+						
+						<p style="padding: 10px;">
+							<b>Email</b><br>
+							s0937372@monmouth.edu
+						</p>
+						
+						<p style="padding: 10px;">
+							<b>Telephone</b><br>
+							877-393-4448
+						</p>
+						
+						<p style="padding: 10px;">
+							<b>Address</b><br>
+							SocDoc Inc.<br>
+							400 Cedar Ave<br>
+							West Long Branch, NJ 07764
+						</p>
+						
+						<b style="padding-left: 10px;">Social Media</b>
+						<div class="socialMediaGridContainer">
+							<div class="socialMediaGridItem">
+								<img src="./static/images/facebookLogo.png" alt="Facebook Logo"/>
+							</div>
+							<div class="socialMediaGridItem">
+								<img src="./static/images/twitterLogo.png" alt="Twitter Logo"/>
+							</div>
+							<div class="socialMediaGridItem">
+								<img src="./static/images/instagramLogo.png" alt="Instagram Logo"/>
+							</div>
+							<div class="socialMediaGridItem">
+								<img src="./static/images/LinkedInLogo.png" alt="LinkedIn Logo"/>
+							</div>
+							<div class="socialMediaGridItem">
+								<img src="./static/images/redditLogo.png" alt="Reddit Logo"/>
+							</div>
+							<div class="socialMediaGridItem">
+								<img src="./static/images/pinterestLogo.png" alt="Pinterest Logo"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 {% endblock %}

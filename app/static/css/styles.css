@@ -403,6 +403,23 @@ button:focus {
 	border-radius: 5px;
 }
 
+.textInput {
+	height: 30px;
+	
+	border-width: .5px;
+	border-radius: 5px;
+}
+
+.largeTextInput {
+	height: 200px;
+	width: 570px;
+	
+	font-family: "Calibri"; 
+	
+	border-width: .5px;
+	border-radius: 5px;
+}
+
 .loginContainer input:focus {
     outline: none;
 }
@@ -765,6 +782,152 @@ button:focus {
 	border-color: red;
 	border-style: solid;
 	*/
+}
+
+.contactUsBody .contactUsContainer .contactContentContainer{
+	width:100%;
+	height: auto;
+	
+	padding-top: 15px;
+	
+	display:flex;
+	flex-direction: row;
+	
+	text-align:center;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+}
+
+.contactUsBody .contactUsContainer .contactContentContainer .contactFormContainer{
+	width: 80%;
+	height: auto;
+	
+	display: flex;
+	flex-direction:column;
+	text-align:center;
+	
+	/*
+	border: 1px;
+	border-color: green;
+	border-style: solid;
+	*/
+}
+
+.contactUsBody .contactUsContainer .contactContentContainer .contactFormContainer .contactForm{
+	width: 100%;
+	height: auto;
+	
+	text-align:center;
+	
+	/*
+	border: 1px;
+	border-color: blue;
+	border-style: solid;
+	*/
+}
+
+.contactUsBody .contactUsContainer .contactContentContainer .contactFormContainer .contactFormInfo{
+	width: 100%;
+	height: auto;
+	
+	text-align:left;
+}
+
+.contactUsBody .contactUsContainer .contactContentContainer .messageFieldLine{
+	width:100%;
+	height: auto;
+	
+	display:flex;
+	flex-direction: row;
+	
+	justify-content:center;
+	
+	/*
+	border: 1px;
+	border-color: green;
+	border-style: solid;
+	*/
+}
+
+.contactUsBody .contactUsContainer .contactContentContainer .contactLinks{
+	width: 20%;
+	height: auto%;
+	
+	padding: 10px;
+	
+	display:flex;
+	flex-direction: column;
+	text-align:center;
+	
+	justify-content:center;
+	align-items: center;
+	
+	background-color: #f2f2f2;
+	
+	/*
+	border: 1px;
+	border-color: green;
+	border-style: solid;
+	*/
+}
+
+.contactUsBody .contactUsContainer .contactContentContainer .contactLinks .pointsOfContact{
+	width: 100%;
+	height: auto;
+	
+	text-align:left;
+	
+	background-color:white;
+	
+	/*
+	border: 1px;
+	border-color: blue;
+	border-style: solid;
+	*/
+}
+
+.contactUsBody .contactUsContainer .contactContentContainer .socialMediaGridContainer{
+	display: grid;
+	
+	width: 40%;
+	
+	grid-gap: 5px;
+	grid-template-columns: auto auto auto;
+	padding: 10px;
+	padding-bottom:30px;
+}
+
+.contactUsBody .contactUsContainer .contactContentContainer .contactLinks .socialMediaGridItem{
+	width: 40px;
+	height: 40px;
+	
+	padding: 2px;
+	
+	background-color: #f2f2f2;
+	padding: 5px;
+	font-size: 10pt;
+	text-align: center;
+}
+
+.contactUsBody .contactUsContainer .contactContentContainer .contactLinks .socialMediaGridItem img{
+	width: 40px;
+	height: 40px;
+}
+
+.sendMessageButton{
+	width: 80px;
+	height: 40px;
+	
+	padding-top: 5px;
+	
+	font-size: 14pt;
+	font-weight:bold;
+	
+	border-radius: 5px;
 }
 
 .aboutUsBody{

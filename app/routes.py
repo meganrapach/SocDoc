@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for, request, jsonify
 from app import app
-from app.forms import LoginForm, CreateAccountForm
+from app.forms import LoginForm, CreateAccountForm, ContactUsForm
 
 from app.catalog import Catalog
 
@@ -82,9 +82,14 @@ def trackOrder():
 def cart():
     return render_template('cart.html', title='Your Cart')
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'Post'])
 def contact():
-    return render_template('contact.html', title='Contact Us')
+    form = ContactUsForm()
+    if form.validate_on_submit():
+        flash('Message sent from {}'.format(
+            form.name.data))
+        return redirect(url_for('index'))
+    return render_template('contact.html', title='Contact Us', form = form)
 
 @app.route('/createAccount', methods=['GET', 'Post'])
 def createAccount():
@@ -94,4 +99,3 @@ def createAccount():
             accountForm.firstName.data))
         return redirect(url_for('index'))
     return render_template('createAccount.html', title='Create Account', form = accountForm)
-
