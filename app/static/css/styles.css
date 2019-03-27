@@ -875,7 +875,7 @@ button:focus {
 	*/
 }
 
-.contactUsBody .contactUsContainer .contactContentContainer .contactLinks .pointsOfContact{
+.contactUsBody .contactUsContainer .contactContentContainer .pointsOfContact{
 	width: 100%;
 	height: auto;
 	
@@ -901,7 +901,7 @@ button:focus {
 	padding-bottom:30px;
 }
 
-.contactUsBody .contactUsContainer .contactContentContainer .contactLinks .socialMediaGridItem{
+.contactUsBody .contactUsContainer .contactContentContainer .socialMediaGridItem{
 	width: 40px;
 	height: 40px;
 	
@@ -913,7 +913,7 @@ button:focus {
 	text-align: center;
 }
 
-.contactUsBody .contactUsContainer .contactContentContainer .contactLinks .socialMediaGridItem img{
+.contactUsBody .contactUsContainer .contactContentContainer .socialMediaGridItem img{
 	width: 40px;
 	height: 40px;
 }
