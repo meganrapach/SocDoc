@@ -1023,3 +1023,246 @@ button:focus {
 	border-style: solid;
 	*/
 }
+
+.itemDetailBody{
+	width: 100%;
+	height: auto;
+	
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	justify-content: space-evenly;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+}
+
+.itemDetailBody .itemViewContainer{
+	width: 40%;
+	height: auto;
+	
+	text-align:center;
+	
+	padding: 20px;
+	
+	background-color: #fff8b7;
+	
+	/*
+	border: 1px;
+	border-color: blue;
+	border-style: solid;
+	*/
+}
+
+.itemDetailBody .itemViewContainer .itemView{
+	width: fit;
+	height: auto;
+
+	text-align: center;
+	
+	padding: 10px;
+	
+	background-color: white;
+	
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
+}
+
+.itemDetailBody .itemDetailContainer{
+	width: 50%;
+	height: auto;
+	
+	padding: 20px;
+	
+	background-color: #f2f2f2;
+	
+	/*
+	border: 1px;
+	border-color: green;
+	border-style: solid;
+	*/
+}
+
+.itemDetailBody .itemDetailContainer .itemDetail{
+	width: fit;
+	height: auto;
+
+	text-align: left;
+	
+	padding: 10px;
+	
+	background-color: white;
+	
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
+}
+
+.itemDetailBody .img-zoom-container {
+  position: relative;
+  
+  padding: 10px;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  /*
+  border: 1px;
+  border-color: green;
+  border-style: solid;
+  */
+}
+
+.itemDetailBody .img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.itemDetailBody .img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 125px;
+  height: 125px;
+  
+  align-self: flex-end;
+}
+
+.itemDetailBody .itemViewContainer .itemView img{
+	width: 400px;
+	height: 320px;
+}
+
+.itemDetailBody .itemDetailInfoContainer{
+	width: 100%;
+	height: auto;
+	
+	display: flex;
+	flex-direction: row;
+	
+	/*
+	border: 1px;
+    border-color: red;
+    border-style: solid;
+	*/
+}
+
+.itemDetailBody .itemDetailInfoContainer .itemOptions{
+	width: 40%;
+	height: auto;
+	
+	display: flex;
+	flex-direction: column;
+	
+	padding-left: 20px;
+	
+	/*
+	border: 1px;
+    border-color: blue;
+    border-style: solid;
+	*/
+}
+
+.itemDetailBody .itemDetailInfoContainer .itemInfo{
+	width: 60%;
+	height: auto;
+	
+	display: flex;
+	flex-direction: column;
+	
+	padding-right: 20px;
+	
+	/*
+	border: 1px;
+    border-color: green;
+    border-style: solid;
+	*/
+}
+
+.itemDetailBody .itemDetailInfoContainer .header{
+	color: 7f7f7f;
+	font-weight: bold;
+	font-size: 14pt;
+}
+
+.itemDetailBody .itemDetailInfoContainer .itemOptions .custom-select{
+  position: relative;
+  font-family: "Calibri";
+  
+  border: 6px solid #f2f2f2;
+}
+
+.itemDetailBody .itemDetailInfoContainer .itemOptions .custom-select select{
+	display: none; /*hide original SELECT element:*/
+}
+
+.itemDetailBody .itemDetailInfoContainer .itemOptions .select_selected{
+	background-color: #f2f2f2;
+}
+
+/*style the arrow inside the select element:*/
+.itemDetailBody .itemDetailInfoContainer .itemOptions .select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid #f2f2f2;
+  border-color: #7f7f7f transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.itemDetailBody .itemDetailInfoContainer .itemOptions .select-selected .select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.itemDetailBody .itemDetailInfoContainer .itemOptions .select-items div,.select-selected {
+  color: #7f7f7f;
+  padding: 8px 16px;
+  border: 1px solid #f2f2f2;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.itemDetailBody .itemDetailInfoContainer .itemOptions .select-items {
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.itemDetailBody .itemDetailInfoContainer .itemOptions .select-hide {
+  display: none;
+}
+
+.itemDetailBody .itemDetailInfoContainer .itemOptions .select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.addToCart{
+	width: 200px;
+	height: 50px;
+	
+	text-align:center;
+	font-weight: bold;
+	font-size: 16pt;
+	line-height: 50px;
+	
+	background-color: #feef4a;
+	border-radius: 5px;
+}
