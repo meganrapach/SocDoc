@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+	<script
+	  type="text/javascript"
+	  id="snipcart"
+	  src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
+	  data-api-key="ZTg4MzcyZTgtNzM5MC00MDRlLTk0ZDAtYTRkY2YzOTExMjAzNjM2ODk3MzI4MzkyMTM1MzIy"
+	  data-autopop="false"></script>
+
+	<link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet" />
+	
 	<h1>Catalog</h1>
 	
 	<div class='catalogContainer'>
@@ -12,22 +21,31 @@
 		<div class='catalog'>
 			{% for item in catalog.items %}
 				<div class='item'>
-					<a href={{ url_for('itemDetail', item=item.title) }} style='text-decoration: none; color: black;'>
+					<a href={{ url_for('itemDetail', item=item.name) }} style='text-decoration: none; color: black;'>
 						<div class='imageBG'>
 							<img src={{ item.imagePath }} alt="Catalog item image" />
 						</div>
 					</a>
 					<div class='itemInfo'>
 						<b>${{ item.price }}</b><br>
-						{{ item.title }}
+						{{ item.name }}
 					</div>
 					<div class='itemButtons'>
 						<div class='itemDetails'>
 							Details
 						</div>
 						<div class='addToCart'>
-							Add to Cart
+							<button
+							class="snipcart-add-item"
+							data-item-id={{ item.itemID }}
+							data-item-name={{ item.name }}
+							data-item-price={{ item.price }}
+							data-item-image={{ item.imagePath }}
+							data-item-url="http://myapp.com/products/bacon">
+								Add to Cart
+							</button>
 						</div>
+						
 					</div>
 				</div>
 			{% endfor %}
