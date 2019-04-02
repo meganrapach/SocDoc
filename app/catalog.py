@@ -6,7 +6,7 @@ class Catalog():
             'price': '10.00',
             'quantity': '15',
             'color': 'brown',
-            'size': 'S',
+            'size': ['Small', 'Medium', 'Large'],
             'imagePath': '/static/images/adamLevineTankSock.png',
             'description': 'This is the Adam Levine Superbowl LIII Tank Pattern Sock.'
         },
@@ -16,7 +16,7 @@ class Catalog():
             'price': '7.00',
             'quantity': '15',
             'color': 'yellow',
-            'size': 'S',
+            'size': ['Small', 'Medium', 'Large'],
             'imagePath': '/static/images/officialSocDocLogoSock.png',
             'description': 'This is the Official SocDoc Logo sock.'
         },
@@ -26,7 +26,7 @@ class Catalog():
             'price': '9.00',
             'quantity': '15',
             'color': 'black',
-            'size': 'S',
+            'size': ['Small', 'Medium', 'Large'],
             'imagePath': '/static/images/BAD0PatternSock.png',
             'description': 'This is the BAD0 Pattern sock.'
         },
@@ -36,7 +36,7 @@ class Catalog():
             'price': '10.00',
             'quantity': '15',
             'color': 'white',
-            'size': 'S',
+            'size': ['Small', 'Medium', 'Large'],
             'imagePath': '/static/images/JustinBieberJerseySock.png',
             'description': 'This is the Justin Bieber Jersey sock.'
         },
@@ -46,7 +46,7 @@ class Catalog():
             'price': '6.00',
             'quantity': '15',
             'color': 'green',
-            'size': 'S',
+            'size': ['Small', 'Medium', 'Large'],
             'imagePath': '/static/images/AnimalCrossingSock.png',
             'description': 'This is the Animal Crossing Logo sock.'
         },
@@ -56,7 +56,7 @@ class Catalog():
             'price': '9.00',
             'quantity': '15',
             'color': 'white',
-            'size': 'S',
+            'size': ['Small', 'Medium', 'Large'],
             'imagePath': '/static/images/placeholderSock.png',
             'description': 'This is a placeholder sock.'
         }

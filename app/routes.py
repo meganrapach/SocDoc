@@ -1,6 +1,9 @@
 from flask import render_template, flash, redirect, url_for, request, jsonify
+
 from app import app
 from app.forms import LoginForm, CreateAccountForm, ContactUsForm
+
+from app.email import send_email
 
 from app.catalog import Catalog
 
@@ -88,6 +91,10 @@ def contact():
     if form.validate_on_submit():
         flash('Message sent from {}'.format(
             form.name.data))
+        print(form.message)
+        send_email('SocDoc Support Request',
+                   'contactSocDoc@gmail.com', ['s0937372@monmouth.edu'],
+                   'Name: {}\nReturn email: {}\nMessage Content: {}'.format(form.name.data, form.email.data, form.message.data))
         return redirect(url_for('index'))
     return render_template('contact.html', title='Contact Us', form = form)
 
