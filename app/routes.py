@@ -106,6 +106,8 @@ def createAccount():
     
     accountForm = CreateAccountForm()
     if accountForm.validate_on_submit():
+        user = accountForm.email.data
+        password = accountForm.password.data
         r = requests.get(url = URL) 
         flash('New Account requested for user {}'.format(
             accountForm.firstName.data))
