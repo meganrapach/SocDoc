@@ -7,6 +7,8 @@ from app.email import send_email
 
 from app.catalog import Catalog
 
+import requests
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -100,8 +102,11 @@ def contact():
 
 @app.route('/createAccount', methods=['GET', 'Post'])
 def createAccount():
+    URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/testapicall"
+    
     accountForm = CreateAccountForm()
     if accountForm.validate_on_submit():
+        r = requests.get(url = URL) 
         flash('New Account requested for user {}'.format(
             accountForm.firstName.data))
         return redirect(url_for('index'))
