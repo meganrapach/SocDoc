@@ -108,6 +108,7 @@ def createAccount():
     if accountForm.validate_on_submit():
         user = accountForm.email.data
         password = accountForm.password.data
+        URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/testapicallproxy?username=%s&password=%s" % (username, password)
         r = requests.get(url = URL) 
         flash('New Account requested for user {}'.format(
             accountForm.firstName.data))
