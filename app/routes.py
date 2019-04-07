@@ -29,8 +29,7 @@ def index():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        flash('Login requested for user {}, remember_me={}'.format(
-            form.username.data, form.remember_me.data))
+        #flash('Login requested for user {}, remember_me={}'.format(form.username.data, form.remember_me.data))
         return redirect(url_for('index'))
     return render_template('login.html', title = 'Sign In', form = form)
 
@@ -91,26 +90,51 @@ def cart():
 def contact():
     form = ContactUsForm()
     if form.validate_on_submit():
-        flash('Message sent from {}'.format(
-            form.name.data))
+        #flash('Message sent from {}'.format(
+        #    form.name.data))
         print(form.message)
-        send_email('SocDoc Support Request',
-                   'contactSocDoc@gmail.com', ['s0937372@monmouth.edu'],
-                   'Name: {}\nReturn email: {}\nMessage Content: {}'.format(form.name.data, form.email.data, form.message.data))
+        #send_email('SocDoc Support Request',
+        #           'contactSocDoc@gmail.com', ['s0937372@monmouth.edu'],
+        #           'Name: {}\nReturn email: {}\nMessage Content: {}'.format(form.name.data, form.email.data, form.message.data))
         return redirect(url_for('index'))
     return render_template('contact.html', title='Contact Us', form = form)
 
 @app.route('/createAccount', methods=['GET', 'Post'])
 def createAccount():
-    URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/testapicall"
+    #URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/testapicall"
     
     accountForm = CreateAccountForm()
     if accountForm.validate_on_submit():
+        first = accountForm.firstName.data
+        last = accountForm.lastName.data
+        zipCode = accountForm.zipCode.data
+
         user = accountForm.email.data
         password = accountForm.password.data
-        URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/testapicallproxy?username=%s&password=%s" % (username, password)
-        r = requests.get(url = URL) 
-        flash('New Account requested for user {}'.format(
-            accountForm.firstName.data))
-        return redirect(url_for('index'))
+
+        #URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/testapicallproxy?username=%s&password=%s" % (user, password)
+        #r = requests.get(url = URL) 
+
+        #flash('New Account requested for user {}'.format(accountForm.firstName.data))
+
+        return redirect(url_for('createAccount_success', first = first, last = last, user = user))
+    
     return render_template('createAccount.html', title='Create Account', form = accountForm)
+
+@app.route('/createAccount_success', methods=['GET', 'Post'])
+def createAccount_success():
+
+    if request.method == 'GET':
+        first = request.args.get('first', '')
+        last = request.args.get('last', '')
+        user = request.args.get('user', '')
+        print(type(user))
+        print(user)
+    else:
+        user = "Placeholder"
+    
+    return render_template('createAccount_success.html', title='Account Created!', first = first, last = last, user = user)
+
+@app.route('/createAccount_fail')
+def createAccount_fail():
+    return render_template('createAccount_fail.html', title='Unable to Create Account')

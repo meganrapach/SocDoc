@@ -506,7 +506,7 @@ button:focus {
 	margin-top: 65px;
 	
 	width: 450px;
-	height: 400px;
+	height: 480px;
 	display: inline-block;
 	text-align: center;
 	
@@ -569,6 +569,42 @@ button:focus {
 	border-radius: 5px;
 	
 	font-weight: bold;
+}
+
+.createAccountStatusContainer{
+	
+	margin-top: 65px;
+	
+	width: 450px;
+	height: auto; 
+	display: inline-block;
+	text-align: center;
+	
+	background-color: white;
+	
+	padding: 20px;
+	
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
+	
+	/*
+	border: 1px;
+	border-color: red;
+	border-style: solid;
+	*/
+}
+
+.createAccountStatusContainer img{
+	padding-top: 20px;
+	
+	width: auto;
+	height: 150px;
+}
+
+.createAccountStatusContainer a{
+	text-decoration: none;
+	color: #7f7f7f;
 }
 
 .homepageBody{

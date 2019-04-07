@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="createAccountBody">
+		<div class="createAccountStatusContainer">
+			<img src="./static/images/2_Thumbs_Up.jpg" alt="Two thumbs up"/>
+			
+			<h1>Account created!</h1>
+			
+			{% if user != '' %}
+				<h4>
+				Welcome to SocDoc, {{ first }} {{ last }}! Please use your {{ user }} email to sign in. 
+				</h4>
+			{% else %}
+				<h4>
+				Welcome to SocDoc! Please use your email to sign in. 
+				</h4>
+			{% endif %}
+			
+			<a href={{ url_for('login') }}>Return to login in page</a>
+			
+		</div>
+	</div>
+{% endblock %}
