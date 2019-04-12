@@ -2,15 +2,43 @@
 
 {% block content %}
 	
-	<h1>Catalog</h1>
+	<h1>Products</h1>
 	
 	<div class='catalogContainer'>
-		
-		<div class='filterNav'>
-			*Filter Nav Area*
-		</div>
-		
 		<div class='catalog'>
+		
+			<div class='item'>
+				<a href={{ url_for('itemDetail', item='Adam Levine Superbowl LIII Tank Pattern') }} style='text-decoration: none; color: black;'>
+					<div class='imageBG'>
+						<img src={{ catalog.items[0].imagePath }} alt="Catalog item image" />
+					</div>
+				</a>
+				<div class='itemInfo'>
+					<b>${{ catalog.items[0].price }}</b><br>
+					{{ catalog.items[0].name }}
+				</div>
+				<div class='itemButtons'>
+					<div class='itemDetails'>
+						Details
+					</div>
+					<div class='addToCart'>
+						<button
+						class="snipcart-add-item"
+						data-item-id='1'
+						data-item-name='Adam Levine Superbowl LIII Tank Pattern'
+						data-item-price='10.00'
+						data-item-image='/static/images/adamLevineTankSock.png'
+						data-item-url="http://localhost:5000/products/"
+						data-item-custom1-name="Size"
+						data-item-custom1-options="Small | Medium | Large">
+							Add to Cart
+						</button>
+					</div>
+						
+				</div>
+			</div>
+		
+		
 			{% for item in catalog.items %}
 				<div class='item'>
 					<a href={{ url_for('itemDetail', item=item.name) }} style='text-decoration: none; color: black;'>
@@ -45,4 +73,5 @@
 			{% endfor %}
 		</div>
 	</div>
+	
 {% endblock %}

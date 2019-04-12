@@ -1316,3 +1316,16 @@ button:focus {
 	background-color: #feef4a;
 	border-radius: 5px;
 }
+
+.addToCart button{
+	width: 200px;
+	height: 50px;
+	
+	text-align:center;
+	font-weight: bold;
+	font-size: 16pt;
+	line-height: 50px;
+	
+	background-color: #feef4a;
+	border-radius: 5px;
+}

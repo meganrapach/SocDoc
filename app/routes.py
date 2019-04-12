@@ -38,6 +38,11 @@ def catalog():
     catalog = Catalog()
     return render_template('catalog.html', title='Product Catalog', catalog=catalog)
 
+@app.route('/products')
+def products():
+    catalog = Catalog()
+    return render_template('products.html', title='Product List', catalog=catalog)
+
 @app.route('/itemDetail')
 def itemDetail():
     catalog = Catalog()
@@ -112,12 +117,15 @@ def createAccount():
         user = accountForm.email.data
         password = accountForm.password.data
 
-        #URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/testapicallproxy?username=%s&password=%s" % (user, password)
-        #r = requests.get(url = URL) 
-
-        #flash('New Account requested for user {}'.format(accountForm.firstName.data))
-
-        return redirect(url_for('createAccount_success', first = first, last = last, user = user))
+        if accountForm.check_password(password):
+            URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/testapicallproxy?username=%s&password=%s&firstname=%s&lastname=%s&zipcode=%s" % (user, password, first, last, zipCode)
+            print(URL)
+            r = requests.get(url = URL)
+            print("\n")
+            print(r.json())
+            #print(type(r.json()))
+            #flash('New Account requested for user {}'.format(accountForm.firstName.data))
+            return redirect(url_for('createAccount_success', first = first, last = last, user = user))
     
     return render_template('createAccount.html', title='Create Account', form = accountForm)
 
