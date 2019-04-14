@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for, request, jsonify
+from flask import render_template, flash, redirect, url_for, request, jsonify, session
 
 from app import app
 from app.forms import LoginForm, CreateAccountForm, ContactUsForm
@@ -28,10 +28,39 @@ def index():
 @app.route('/login', methods=['GET', 'Post'])
 def login():
     form = LoginForm()
+
+    if session['logged_in'] == True:
+        flash('You are already logged in')
+        return render_template('login.html', title = 'Sign In', form = form)
+    
     if form.validate_on_submit():
+        user = form.username.data
+        password = form.password.data
+        
         #flash('Login requested for user {}, remember_me={}'.format(form.username.data, form.remember_me.data))
-        return redirect(url_for('index'))
+        URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/socdoc-login?username=%s&password=%s" % (user, password)
+        print(URL)
+        r = requests.get(url = URL)
+        print("\n")
+        print(r.json())
+
+        if r.json() == "verified":
+            session['logged_in'] = True
+            print(session.get('logged_in'))
+            #session['logged_in'] = False
+            #print(session.get('logged_in'))
+            return redirect(url_for('index')) 
+        
     return render_template('login.html', title = 'Sign In', form = form)
+
+@app.route('/logout', methods=['GET', 'Post'])
+def logout():
+    if session['logged_in'] == True:
+        session['logged_in'] = False
+        print('logged out')
+        return redirect(url_for('index'))
+    flash('You are not logged in!')
+    return render_template('index.html')
 
 @app.route('/catalog')
 def catalog():
@@ -118,7 +147,7 @@ def createAccount():
         password = accountForm.password.data
 
         if accountForm.check_password(password):
-            URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/testapicallproxy?username=%s&password=%s&firstname=%s&lastname=%s&zipcode=%s" % (user, password, first, last, zipCode)
+            URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/socdoc-create-account?username=%s&password=%s&firstname=%s&lastname=%s&zipcode=%s" % (user, password, first, last, zipCode)
             print(URL)
             r = requests.get(url = URL)
             print("\n")
