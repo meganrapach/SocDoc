@@ -29,35 +29,39 @@ def index():
 def login():
     form = LoginForm()
 
-    if session['logged_in'] == True:
+    if 'logged_in' not in session or session['logged_in'] == False:
+        if form.validate_on_submit():
+            user = form.username.data
+            password = form.password.data
+        
+            #flash('Login requested for user {}, remember_me={}'.format(form.username.data, form.remember_me.data))
+            URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/socdoc-login?username=%s&password=%s" % (user, password)
+            print(URL)
+            r = requests.get(url = URL)
+            print("\n")
+            print(r.json())
+
+            if r.json() == "verified":
+                session['logged_in'] = True
+                print(session.get('logged_in'))
+                #session['logged_in'] = False
+                #print(session.get('logged_in'))
+                return redirect(url_for('index'))
+
+        return render_template('login.html', title = 'Sign In', form = form)
+
+    if 'logged_in' in session and session['logged_in'] == True:
         flash('You are already logged in')
         return render_template('login.html', title = 'Sign In', form = form)
-    
-    if form.validate_on_submit():
-        user = form.username.data
-        password = form.password.data
-        
-        #flash('Login requested for user {}, remember_me={}'.format(form.username.data, form.remember_me.data))
-        URL = "https://ofe3yhbyec.execute-api.us-east-1.amazonaws.com/beta/socdoc-login?username=%s&password=%s" % (user, password)
-        print(URL)
-        r = requests.get(url = URL)
-        print("\n")
-        print(r.json())
-
-        if r.json() == "verified":
-            session['logged_in'] = True
-            print(session.get('logged_in'))
-            #session['logged_in'] = False
-            #print(session.get('logged_in'))
-            return redirect(url_for('index')) 
         
     return render_template('login.html', title = 'Sign In', form = form)
 
 @app.route('/logout', methods=['GET', 'Post'])
 def logout():
-    if session['logged_in'] == True:
+    if 'logged_in' in session and session['logged_in'] == True:
         session['logged_in'] = False
         print('logged out')
+        flash("You have been logged out")
         return redirect(url_for('index'))
     flash('You are not logged in!')
     return render_template('index.html')
