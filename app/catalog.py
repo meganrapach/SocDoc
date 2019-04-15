@@ -52,12 +52,42 @@ class Catalog():
         },
         {
             'itemID': '6',
-            'name': 'Placeholder Sock 4',
+            'name': '\"We Outta Here\" Graduation Sock',
+            'price': '8.00',
+            'quantity': '15',
+            'color': 'blue',
+            'size': ['Small', 'Medium', 'Large'],
+            'imagePath': '/static/images/WeOuttaHereGraduationSock.png',
+            'description': 'This is the \"We Outta Here\" graduation sock. We outta here!'
+        },
+        {
+            'itemID': '7',
+            'name': 'Cat Lover\'s Dream Sock',
+            'price': '7.00',
+            'quantity': '15',
+            'color': 'orange',
+            'size': ['Small', 'Medium', 'Large'],
+            'imagePath': '/static/images/catLoversSock.png',
+            'description': 'This is the Cat Lover\'s Dream sock.'
+        },
+        {
+            'itemID': '8',
+            'name': 'Doggo Socko',
+            'price': '7.00',
+            'quantity': '15',
+            'color': 'yellow',
+            'size': ['Small', 'Medium', 'Large'],
+            'imagePath': '/static/images/doggoSocko.png',
+            'description': 'This is the Doggo Socko. For all the good boys out there.'
+        },
+        {
+            'itemID': '9',
+            'name': 'Spongebob Sky Sock',
             'price': '9.00',
             'quantity': '15',
-            'color': 'white',
+            'color': 'blue',
             'size': ['Small', 'Medium', 'Large'],
-            'imagePath': '/static/images/placeholderSock.png',
-            'description': 'This is a placeholder sock.'
+            'imagePath': '/static/images/spongebobSkySock.png',
+            'description': 'This is the Spongebob Sky Sock.'
         }
     ]
