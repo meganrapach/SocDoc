@@ -208,9 +208,20 @@ button:focus {
 
 
 .catalogContainer{
+	
+	/*
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	flex-direction: column;
+	*/
+	justify-content: center;
+	text-align: center;
+	
+	
+	
+	width: 100%;
+	height: auto;
+	
+	background-color: white;
 }
 
 .filterNav{
@@ -224,17 +235,23 @@ button:focus {
 
 .catalog {
 
-	width: 75%;
+	width: 90%;
+	height: auto;
 
 	background-color: #fff8b7;
 
 	display: inline-grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: auto auto auto auto;
 	grid-gap: 25px;
 	
 	justify-items: center;
 
 	padding: 20px;
+	padding-top: 40px;
+	
+	-moz-box-shadow: 0 0 10px #7f7f7f;
+	-webkit-box-shadow: 0 0 10px #7f7f7f;
+	box-shadow: 0 0 10px #7f7f7f;
 
 	/*
 	border: 1px;

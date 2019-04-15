@@ -1,15 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-	
-	<h1>Catalog</h1>
-	
 	<div class='catalogContainer'>
-		
-		<div class='filterNav'>
-			*Filter Nav Area*
-		</div>
-		
+		<h1>SocDoc Catalog</h1>
 		<div class='catalog'>
 			{% for item in catalog.items %}
 				<div class='item'>
@@ -24,11 +17,13 @@
 					</div>
 					<div class='itemButtons'>
 						<div class='itemDetails'>
-							Details
+							<a href={{ url_for('itemDetail', item=item.name) }} style='text-decoration: none; color: black;'>
+								Details
+							</a>
 						</div>
 						<div class='addToCart'>
 							<button
-							class="snipcart-add-item"
+							class="snipcart-add-item" style="font-size: 12pt"
 							data-item-id={{ item.itemID }}
 							data-item-name={{ item.name }}
 							data-item-price={{ item.price }}

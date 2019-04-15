@@ -44,6 +44,7 @@ def login():
             if r.json() == "verified":
                 session['logged_in'] = True
                 print(session.get('logged_in'))
+                flash('Login successful! Welcome %s' % (user))
                 #session['logged_in'] = False
                 #print(session.get('logged_in'))
                 return redirect(url_for('index'))
